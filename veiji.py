@@ -1,3 +1,5 @@
+#作者：qjm
+#鸣谢：Kevil
 import getopt
 from string import ascii_lowercase as lowercase
 import sys
@@ -61,7 +63,7 @@ if __name__ == '__main__':
     
     a = pyfiglet.Figlet (font='slant')
     print (a.renderText ('virginia'))
-    print ("-h ")
+    print ("-h 显示帮助")
     try:
 
         longargs = ['help=','jiami=','jiemi=','key=']
