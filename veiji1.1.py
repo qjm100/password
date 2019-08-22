@@ -1,11 +1,13 @@
 #_*_coding:utf-8_*_
 import getopt
+import re
 from string import ascii_lowercase as lowercase
 import sys
 try:
     import pyfiglet
 except ImportError:
     print ("请安装pyfiglet 请运行 pip install pyfiglet")
+
 ke = None
 def En(p, key):
     p = get_trim_text(p)
@@ -58,6 +60,11 @@ def get_trim_text(text):
         if lowercase.find(l) >= 0:
             trim_text += l
     return trim_text 
+def reg (r):
+    v = re.split(' ',r)
+    for i in v:
+        i += i
+    return i
 
 if __name__ == '__main__':
     
@@ -82,15 +89,15 @@ if __name__ == '__main__':
                 if ke == None:
                     print ("无秘钥，请确保输入秘钥！")
                     break
-                jiami = a
+                jiami = reg (a)
                 print (En (jiami,ke))
                 b = False
             if o in ("--jiemi" ,"-d"):
                 if ke == None:
                     print ("无秘钥，请确保输入秘钥！")
                     break
-
-                jiemi = a
+                
+                jiemi = reg(a)
                 print (De (jiemi,ke))
                 b = False
         
